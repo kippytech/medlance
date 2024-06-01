@@ -66,7 +66,7 @@ const megaMenu = [
         ]
     },
     {
-        title: 'Specialists',
+        title: 'Specialties',
         services: [
             {
                 title: "Telehealth",

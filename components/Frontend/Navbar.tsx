@@ -12,6 +12,8 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
+import Link from 'next/link'
+import { Button } from '../ui/button'
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(' ')
@@ -21,7 +23,7 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="bg-blue-950 border-b border-blue-400/20">
+    <header className="bg-blue-950 border-b border-blue-400/20 sticky top-0 z-50 backdrop-blur">
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-4 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
@@ -53,9 +55,14 @@ export default function Navbar() {
           </a>
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-50 bg-blue-500 rounded-md px-6 py-3">
-            Log in <span aria-hidden="true">&rarr;</span>
-          </a>
+          <Button asChild>
+            <Link 
+              href="/login"
+              className="text-slate-300 font-semibold"
+            >
+              Log in
+            </Link>
+        </Button>
         </div>
       </nav>
       <Dialog className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
@@ -103,12 +110,14 @@ export default function Navbar() {
                 </a>
               </div>
               <div className="py-6">
-                <a
-                  href="#"
-                  className="-mx-3 block px-3 py-2.5 text-base font-semibold leading-7 text-gray-50  bg-blue-500 rounded-md"
-                >
-                  Log in
-                </a>
+                <Button asChild>
+                  <Link 
+                    href="/login"
+                    className="text-slate-300 font-semibold"
+                  >
+                    Log in
+                  </Link>
+                </Button>
               </div>
             </div>
           </div>

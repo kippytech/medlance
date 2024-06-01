@@ -1,12 +1,14 @@
 import type { Config } from "tailwindcss"
+import {withUt} from 'uploadthing/tw'
 
-const config = {
+export default withUt({
   darkMode: ["class"],
   content: [
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
+    "bode_modules/flowbite-react/lib/esm/**/*.js",
 	],
   prefix: "",
   theme: {
@@ -74,7 +76,5 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), require("@tailwindcss/forms")],
-} satisfies Config
-
-export default config
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/forms"), require("flowbite/plugin")],
+}) satisfies Config

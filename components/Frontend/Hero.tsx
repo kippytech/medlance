@@ -19,7 +19,7 @@ const Hero = () => {
                   <span>Book your {" "}</span> <br /><TransitionText TEXTS={TEXTS} /> <br />{" "}<span>session now</span>
                 </h1>
                 <p className="mb-8 max-w-[480px] text-base text-gray-50 dark:text-dark-6">
-                  Health should&apos;t be a puzzle. We are bringing you simple, affordable transparent, and quality healthcare.
+                  Health should&apos;t be a puzzle. We are bringing you simple, affordable, transparent, and quality healthcare.
                 </p>
                 {/* Search bar */}
                 <Searchbar />
